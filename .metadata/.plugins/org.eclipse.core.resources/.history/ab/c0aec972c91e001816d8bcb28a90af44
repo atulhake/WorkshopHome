@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Geneo  Application Test Automation Test Suite">
+	<test name="Geneo StudentApp Test Cases">
+
+	<listeners>
+		<listener class-name="Com.GeneoStudent.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+	
+		<classes>
+			<class name="">Com.GeneoStudent.Testcases.LoginPageTest</class>
+			<class name=""></class>
+			<class name=""></class>
+
+		</classes>
+	</test>
+</suite>

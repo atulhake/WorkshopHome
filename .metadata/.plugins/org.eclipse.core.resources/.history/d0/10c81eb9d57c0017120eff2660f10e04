@@ -1,0 +1,25 @@
+package geneo_tudent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class landing_page {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+	
+		//FirefoxProfile fp =(new ProfilesIni()).getProfile("default");
+				System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
+				WebDriver wd = new FirefoxDriver();
+				
+				wd.get("https://geneo.in/geneo_live/student_login.html"); 
+				wd.findElement(By.id("login_input_Uname")).sendKeys("etegatul@gmail.com"); // for username
+				wd.findElement(By.id("login_input_Pwd")).sendKeys("Geneo@123"); // password
+				Thread.sleep(3000);
+				wd.findElement(By.xpath("/html/body/div[2]/div/div/form/input")).click();  // for login button
+				wd.findElement(By.id("cancel_update_profile")).click();  // did not work
+				wd.findElement(By.className("dropdown main_menu profile_nav open")).click();
+	}
+
+}

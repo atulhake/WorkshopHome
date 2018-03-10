@@ -1,0 +1,27 @@
+package student;
+
+public class test {
+
+	public static void main(String[] args)
+	{
+		String x[][]=new String [3][2];
+		System.out.println(x.length);    // for length of row
+		
+		System.out.println(x[0].length);  // for length of column
+		
+		x[0][0]="A";
+		x[0][1]="B";
+
+		x[1][0]="C";
+
+		x[1][1]="D";
+
+		x[2][0]="E";
+		x[2][1]="F";
+
+		
+		System.out.println(x[2][0]);
+
+	}
+
+}

@@ -1,0 +1,67 @@
+package Com.GeneoStudent.Base;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import Com.GeneoStudent.Util.TestUtil;
+
+public class TestBase 
+{
+      public static WebDriver wd;
+      public static Properties prop;
+       
+   	
+   	public TestBase()	 
+   	{
+   		
+		try {
+			prop = new Properties();
+			
+			
+			
+			/*FileInputStream ip = new FileInputStream(System.getProperty("C:/eclipse/Geneo_maven/src/main/java"
+					+ "/Com/GeneoStudent/config/config.properties1"));*/
+			
+			FileInputStream ip =  new FileInputStream(System.getProperty("C://eclipse//Geneo_maven//src//main//java//Com//GeneoStudent//config//config.properties"));
+			
+			//C:\eclipse\Geneo_maven\src\main\java\Com\GeneoStudent\config\config.properties
+			prop.load(ip);
+			String browserName = prop.getProperty("browser");
+			
+			System.out.println("this is new"+browserName);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+	
+		}
+	}
+   	
+   	
+   	public static void initialization(){
+		String browserName = prop.getProperty("browser");
+		
+		if(browserName.equals("chrome")){
+			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");	
+			wd = new ChromeDriver(); 
+		}
+		else if(browserName.equals("FF")){
+			System.setProperty("webdriver.gecko.driver", "/Users/naveenkhunteta/Documents/SeleniumServer/geckodriver");	
+			wd = new FirefoxDriver(); 
+		}
+		
+		wd.manage().window().maximize();
+		wd.manage().deleteAllCookies();
+		wd.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		wd.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		wd.get(prop.getProperty("url"));
+		
+	}
+	
+	
+}

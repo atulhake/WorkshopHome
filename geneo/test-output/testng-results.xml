@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Parallel test suite" duration-ms="21844363" started-at="2017-11-19T14:15:34Z" finished-at="2017-11-19T20:19:38Z">
+    <groups>
+    </groups>
+    <test name="Regression 1" duration-ms="21844363" started-at="2017-11-19T14:15:34Z" finished-at="2017-11-19T20:19:38Z">
+      <class name="student.loginTest">
+        <test-method status="PASS" signature="first()[pri:0, instance:student.loginTest@14acaea5]" name="first" duration-ms="21844278" started-at="2017-11-19T19:45:34Z" finished-at="2017-11-20T01:49:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- first -->
+        <test-method status="PASS" signature="second()[pri:0, instance:student.loginTest@14acaea5]" name="second" duration-ms="14717958" started-at="2017-11-19T19:45:34Z" finished-at="2017-11-19T23:50:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- second -->
+      </class> <!-- student.loginTest -->
+    </test> <!-- Regression 1 -->
+  </suite> <!-- Parallel test suite -->
+</testng-results>
